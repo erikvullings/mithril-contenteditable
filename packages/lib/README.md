@@ -1,6 +1,6 @@
 # mithril-contenteditable
 
-Mithril component for a div with editable contents.
+Mithril component for a div with editable contents. It is loosely inspired by [react-contenteditable](https://github.com/lovasoa/react-contenteditable) and [Tania Rascia's content-editable tutorial](https://www.taniarascia.com/content-editable-elements-in-javascript-react).
 
 ## Installation
 

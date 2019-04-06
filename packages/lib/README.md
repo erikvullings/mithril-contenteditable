@@ -4,6 +4,8 @@ Mithril component for a div with editable contents.
 
 ## Installation
 
+Pull it from [npm](https://www.npmjs.com/package/mithril-contenteditable).
+
 ```bash
 npm i mithril mithril-contenteditable
 # Also install the typings if you use TypeScript

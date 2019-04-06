@@ -11,7 +11,7 @@ export const Layout = () => ({
         m('.nav-wrapper', [
           m(
             // tslint:disable-next-line:max-line-length
-            'a.github-corner[aria-label=View source on GitHub][href=https://github.com/erikvullings/mithril-materialized]',
+            'a.github-corner[aria-label=View source on GitHub][href=https://github.com/erikvullings/mithril-contenteditable]',
             m(
               'svg[aria-hidden=true][height=80][viewBox=0 0 250 250][width=80]',
               {

@@ -40,7 +40,7 @@ import m from 'mithril';
       },
       // Replace the base tag, if needed
       tagName: 'div',
-      // By default, &amp; etc are replaced by their normal counterpart when loosing focus.
+      // By default, &amp; etc are replaced by their normal counterpart when losing focus.
       // cleanupHtml: false,
       // By default, don't allow the user to enter newlines
       // preventNewline: false,

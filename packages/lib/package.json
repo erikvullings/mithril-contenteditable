@@ -9,9 +9,12 @@
   },
   "typings": "dist/index.d.ts",
   "scripts": {
+    "clean": "rimraf .rpt2_cacheac && rimraf dist",
     "link": "npm link",
-    "start": "tsc -w",
-    "build:domain": "typedoc --out ../../docs/typedoc src",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "build:domain": "npm run clean && npm run build && typedoc --out ../../docs/typedoc src",
+    "dry-run": "npm publish --dry-run",
     "patch-release": "npm version patch --force -m \"Patch release\" && npm publish && git push --follow-tags",
     "minor-release": "npm version minor --force -m \"Minor release\" && npm publish && git push --follow-tags",
     "major-release": "npm version major --force -m \"Major release\" && npm publish && git push --follow-tags"
@@ -23,9 +26,25 @@
   "author": "Erik Vullings <erik.vullings@gmail.com> (http://www.tno.nl)",
   "license": "MIT",
   "devDependencies": {
+    "@types/materialize-css": "^1.0.6",
     "@types/mithril": "^1.1.16",
+    "rimraf": "^2.6.3",
+    "autoprefixer": "^9.5.1",
+    "rollup": "^1.13.1",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-terser": "^5.0.0",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "rollup-plugin-auto-external": "^2.0.0",
     "cssnano": "^4.1.10",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-simple-vars": "^5.0.2",
+    "postcss-nested": "^4.1.2",
+    "tslib": "^1.9.3",
     "typedoc": "^0.14.2",
-    "typescript": "^3.4.2"
+    "typescript": "^3.5.1"
   }
 }

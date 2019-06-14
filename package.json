@@ -4,9 +4,10 @@
   "description": "Mithril  component for a div with editable contents",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf ./docs",
     "postinstall": "lerna run link",
     "link": "lerna run link",
-    "build:domain": "lerna run build:domain",
+    "build:domain": "npm run clean && lerna run build:domain",
     "start": "lerna run start --parallel",
     "patch-release": "lerna run patch-release --parallel",
     "minor-release": "lerna run minor-release --parallel",
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/erikvullings/mithril-contenteditable#readme",
   "devDependencies": {
-    "lerna": "^3.4.3"
+    "lerna": "^3.15.0",
+    "rimraf": "^2.6.3"
   }
 }

@@ -26,7 +26,7 @@ export const HomePage = () => ({
 # Also install the typings if you use TypeScript
 npm i --save-dev @types/mithril`,
           }),
-          m('p', 'Next, you can use them inside your application:'),
+          m('p', 'Next, you can use it inside your application:'),
           m(CodeBlock, {
             code: `import { ContentEditable } from 'mithril-contenteditable';
 `,

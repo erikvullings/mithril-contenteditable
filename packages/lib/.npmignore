@@ -1,3 +1,8 @@
 node_modules
-tsconfig
-tslint
+tsconfig.json
+tslint.json
+shrinkwrap.yaml
+pnpm-lock.yaml
+src
+.rpt2_cache
+rollup.config.js

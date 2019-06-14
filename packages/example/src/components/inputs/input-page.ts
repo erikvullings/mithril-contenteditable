@@ -22,6 +22,7 @@ export const InputPage = () => {
               e.preventDefault();
             }
           },
+          onblur: e => console.log(e),
           tagName: 'div',
           // By default, &amp; etc are replaced by their normal counterpart when losing focus.
           // cleanupHtml: false,
@@ -53,6 +54,7 @@ import m from 'mithril';
           e.preventDefault();
         }
       },
+      onblur: e => console.log(e),
       // Replace the base tag, if needed
       tagName: 'div',
       // By default, &amp; etc are replaced by their normal counterpart when losing focus.

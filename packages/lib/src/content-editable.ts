@@ -40,6 +40,8 @@ export interface IContentEditable extends Attributes {
   onchange?: (html: string, evt?: Event) => void;
   /** Handle the keydown event when the user presses a key. */
   onkeydown?: (e: KeyboardEvent) => void;
+  /** Handle for the onblur event */
+  onblur?: (e: FocusEvent) => void;
 }
 
 /**
@@ -123,6 +125,7 @@ export const ContentEditable: FactoryComponent<IContentEditable> = () => {
         preventNewline = true,
         selectAllOnFocus = true,
         onchange,
+        onblur,
         ...props
       },
     }) => {
@@ -133,7 +136,12 @@ export const ContentEditable: FactoryComponent<IContentEditable> = () => {
           contenteditable: !disabled,
           onfocus: selectAllOnFocus ? selectAll : undefined,
           oninput: emitChange,
-          onblur: (e: Event) => emitChange(e, cleanupHtml),
+          onblur: (e: FocusEvent) => {
+            emitChange(e, cleanupHtml);
+            if (onblur) {
+              onblur(e);
+            }
+          },
           onpaste: pasteAsPlainText ? pastePlainText : undefined,
           onkeypress: preventNewline ? disableNewlines : undefined,
         },

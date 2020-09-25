@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/erikvullings/mithril-contenteditable#readme",
   "devDependencies": {
-    "lerna": "^3.15.0",
-    "rimraf": "^2.6.3"
+    "lerna": "^3.22.1",
+    "rimraf": "^3.0.2"
   }
 }

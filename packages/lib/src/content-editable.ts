@@ -129,24 +129,28 @@ export const ContentEditable: FactoryComponent<IContentEditable> = () => {
         ...props
       },
     }) => {
-      return m(
-        tagName,
-        {
-          ...props,
-          contenteditable: !disabled,
-          onfocus: selectAllOnFocus ? selectAll : undefined,
-          oninput: emitChange,
-          onblur: (e: FocusEvent) => {
-            emitChange(e, cleanupHtml);
-            if (onblur) {
-              onblur(e);
-            }
+      return [
+        m('div', { contenteditable: true }, m.trust('<i>Hello, world</i>')),
+        m('div', m.trust('<i>Hello, world</i>')),
+        m(
+          tagName,
+          {
+            ...props,
+            contenteditable: !disabled,
+            onfocus: selectAllOnFocus ? selectAll : undefined,
+            oninput: emitChange,
+            onblur: (e: FocusEvent) => {
+              emitChange(e, cleanupHtml);
+              if (onblur) {
+                onblur(e);
+              }
+            },
+            onpaste: pasteAsPlainText ? pastePlainText : undefined,
+            onkeypress: preventNewline ? disableNewlines : undefined,
           },
-          onpaste: pasteAsPlainText ? pastePlainText : undefined,
-          onkeypress: preventNewline ? disableNewlines : undefined,
-        },
-        m.trust(html)
-      );
+          m.trust(html)
+        ),
+      ];
     },
   };
 };

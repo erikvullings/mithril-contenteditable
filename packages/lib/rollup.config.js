@@ -1,6 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import sourceMaps from 'rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import json from 'rollup-plugin-json';
@@ -22,7 +21,6 @@ export default {
     {
       file: pkg.main,
       format: 'es',
-      sourcemap: true,
     },
   ],
   // Indicate here external modules you don't want to include in your bundle
@@ -52,9 +50,7 @@ export default {
         moduleDirectory: 'node_modules',
       },
     }),
-    // Resolve source maps to the original source
-    sourceMaps(),
     // minifies generated bundles
-    production && terser({ sourcemap: true }),
+    production && terser(),
   ],
 };

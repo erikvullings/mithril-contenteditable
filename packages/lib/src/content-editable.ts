@@ -130,8 +130,6 @@ export const ContentEditable: FactoryComponent<IContentEditable> = () => {
       },
     }) => {
       return [
-        m('div', { contenteditable: true }, m.trust('<i>Hello, world</i>')),
-        m('div', m.trust('<i>Hello, world</i>')),
         m(
           tagName,
           {
